@@ -1,8 +1,8 @@
-# Your Name Here
+# Gracin Goff
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section: 
+# 11/24/24
+# Lab 10
+# Lab Section: 10
 # Sources, people worked with, help given to: 
 # your
 # comments
@@ -29,6 +29,10 @@ def get_hash(to_hash):
 # - The file contains the plaintext version of the passwords. You will need to hash them to check against the password hash you are trying to crack.
 #   - You can use the provided `get_hash()` function to generate the hashes.
 #   - Be careful, as "hello" and "hello " would generate a different hash.
+
+path = Path('rockyou.txt')
+contents = path.read_text()
+lines = contents.splitlines()
 
 # You will need to include a try-except-catch block in your code.
 # - The reading of files needs to occur in the try blocks.
