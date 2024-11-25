@@ -30,10 +30,28 @@ def get_hash(to_hash):
 #   - You can use the provided `get_hash()` function to generate the hashes.
 #   - Be careful, as "hello" and "hello " would generate a different hash.
 
+from pathlib import Path 
+way = Path('hash')
 path = Path('rockyou.txt')
-contents = path.read_text()
-lines = contents.splitlines()
+try:
+    contents1 = path.read_text()
+except FileNotFoundError:
+    print(f'{path} not found')
+else:
+    lines = contents1.splitlines()
+try:
+    contents2 = way.read_text()
+except FileNotFoundError:
+    print(f'{way} not found')
+else: 
+    code = contents2
 
+for line in lines:
+    if get_hash(line) == code:
+        print(f'The password is {line}')
+        break 
+    else:
+        continue
 # You will need to include a try-except-catch block in your code.
 # - The reading of files needs to occur in the try blocks.
 
